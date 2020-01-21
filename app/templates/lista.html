@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="col-8 offset-2">
+    <ul class="list-group">
+        {% for pessoa in context['lista_de_pessoas'] %}
+        <li class="list-group-item list-group-item-dark fundo-cinza texto-amarelo">{{ pessoa.title() }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
