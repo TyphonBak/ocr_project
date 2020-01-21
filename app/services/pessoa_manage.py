@@ -55,7 +55,7 @@ def marca_presenca(dados):
 
 def mostrar_presentes():
     try:
-        return [pessoa.nome for pessoa in Pessoa.query.filter_by(presente=1).all()]
+        return [pessoa.nome for pessoa in Pessoa.query.filter_by(presente=True).all()]
     except Exception as e:
         print('Erro ao mostrar presentes. ', e)
         return None

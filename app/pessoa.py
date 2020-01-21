@@ -5,7 +5,7 @@ class Pessoa(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(), unique=True, nullable=False)
-    presente = db.Column(db.Boolean, nullable=False, default=0)
+    presente = db.Column(db.Boolean, nullable=False, default=False)
 
     def cria(self, dados):
         try:
