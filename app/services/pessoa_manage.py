@@ -57,7 +57,7 @@ def mostrar_presentes():
     try:
         return [pessoa.nome for pessoa in Pessoa.query.filter_by(presente=1).all()]
     except Exception as e:
-        prin('Erro ao mostrar presentes. ', e)
+        print('Erro ao mostrar presentes. ', e)
         return None
 
 def listar():
