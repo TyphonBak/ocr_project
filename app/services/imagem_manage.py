@@ -5,6 +5,8 @@ import numpy as np
 import cv2
 from PIL import Image
 
+ocr.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+
 def busca_texto():
     imagem = Image.open('./imagens/image.jpg').convert('RGB')
 
