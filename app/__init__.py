@@ -1,6 +1,8 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, abort, redirect, url_for
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
+
+from app.services.imagem_manage import busca_texto_em_imagem
 
 app = Flask(__name__)
 CORS(app)
@@ -11,7 +13,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 
 db = SQLAlchemy(app)
 
-from app.services.pessoa_manage import listar as listar_pessoa, mostrar_presentes
+from app.services.pessoa_manage import listar as listar_pessoa, mostrar_presentes, marca_presenca
 # Paginas
 
 @app.route('/')
@@ -44,6 +46,12 @@ def mostra_confirmados():
 @app.route('/salvar-imagem', methods=['POST'])
 def salvar():
     caminho_da_imagem = request.form['link_imagem']
-    #funcao_salvar_imagem(caminho_da_imagem)
-    #code, message = verifica_presenca()
-    return jsonify({"mensagem": 'message'}), 200
+    nome = busca_texto_em_imagem(caminho_da_imagem)
+    code, resp = marca_presenca({'nome': nome})
+    return jsonify({"mensagem": nome}), 200
+
+@app.route('/reseta/<segredo>')
+def reseta_presencas(segredo):
+    if segredo == 'todos':        
+        return redirect(url_for('index'))
+    abort(404)
