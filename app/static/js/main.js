@@ -1,4 +1,5 @@
-const baseUrl = 'http://localhost:5000/'
+// 'http://localhost:5000/'
+const baseUrl = 'https://bak-ocr-project.herokuapp.com/'
 
 function atualizaLinkCamera(link) {
     if (['', '.'].includes(link)){
