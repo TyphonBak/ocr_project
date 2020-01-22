@@ -101,7 +101,8 @@ $('#salvar-imagem').on('click', (event) => {
         linkImagem = linkCamera.replace('video', 'photo.jpg')
         $.post(baseUrl + 'salvar-imagem', {'link_imagem': linkImagem})
         .done((resp) => {
-            alertaUsuario.sucesso(`${resp.mensagem}`)
+            console.log(resp)
+            alertaUsuario.sucesso(`Tudo em ordem`)
             $("#camera").attr('src', '')
             $("#campo-link-camera").val('')
             alternaVisibilidadeLinkComCamera()
