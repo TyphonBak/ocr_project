@@ -20,6 +20,7 @@ psycopg2 = "*"
 gunicorn = "*"
 tesseract-ocr = "*"
 tesseract = "*"
+leptonica = "*"
 
 [requires]
 python_version = "3.7"
