@@ -108,7 +108,7 @@ $('#salvar-imagem').on('click', (event) => {
         })
         .fail((resp) => {
             console.log(resp)
-            alertaUsuario.aviso(`${resp.responseJSON.mensagem}`)
+            alertaUsuario.aviso(`Algo de errado aconteceu. Contate o suporte ou tente novamente.`)
         })
     } else {
         alertaUsuario.aviso('Nenhuma camera disponivel')
