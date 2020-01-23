@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 from app.services.imagem_manage import busca_texto_em_imagem
 
+db = SQLAlchemy()
+
 def create_app():
 
     app = Flask(__name__)
@@ -13,7 +15,7 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 
-    db = SQLAlchemy(app)
+    db.init_app(app)
 
     from app.services.pessoa_manage import listar as listar_pessoa, mostrar_presentes, marca_presenca
     # Paginas
