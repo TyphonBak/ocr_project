@@ -18,8 +18,6 @@ flask-cors = "*"
 flask-sqlalchemy = "*"
 psycopg2 = "*"
 gunicorn = "*"
-tesseract-ocr = "*"
-tesseract = "*"
 
 [requires]
 python_version = "3.7"
