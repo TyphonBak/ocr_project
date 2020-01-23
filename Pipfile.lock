@@ -492,9 +492,9 @@
         },
         "sqlalchemy": {
             "hashes": [
-                "sha256:bfb8f464a5000b567ac1d350b9090cf081180ec1ab4aa87e7bca12dab25320ec"
+                "sha256:64a7b71846db6423807e96820993fa12a03b89127d278290ca25c0b11ed7b4fb"
             ],
-            "version": "==1.3.12"
+            "version": "==1.3.13"
         },
         "tesseract": {
             "hashes": [
@@ -502,6 +502,13 @@
             ],
             "index": "pypi",
             "version": "==0.1.3"
+        },
+        "tesseract-ocr": {
+            "hashes": [
+                "sha256:cf1e58ef7205ad0f82f961729ad3f77b669ac8654dd8ff816f3d4fdbf84da5a4"
+            ],
+            "index": "pypi",
+            "version": "==0.0.1"
         },
         "urllib3": {
             "hashes": [
