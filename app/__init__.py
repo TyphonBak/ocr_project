@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from app.services.imagem_manage import busca_texto_em_imagem
 
-db = SQLAlchemy()
+from app.settings import db
 
 def create_app():
 

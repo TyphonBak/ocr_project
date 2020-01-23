@@ -1,4 +1,4 @@
-from app import db
+from app.settings import db
 
 class Pessoa(db.Model):
     __tablename__ = "pessoa"

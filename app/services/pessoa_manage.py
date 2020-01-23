@@ -1,4 +1,4 @@
-from app import db
+from app.settings import db
 from app.pessoa import Pessoa
 
 def cria(dados):
