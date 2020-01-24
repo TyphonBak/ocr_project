@@ -96,9 +96,9 @@ $('#botao-abrir-camera').on('click', (event) => {
 })
 
 $('#salvar-imagem').on('click', (event) => {
-    linkCamera = $('#camera').attr('src')
+    let linkCamera = $('#camera').attr('src')
     if (linkCamera){
-        linkImagem = linkCamera.replace('video', 'photo.jpg')
+        let linkImagem = linkCamera.replace('video', 'photo.jpg')
         $.post(baseUrl + 'salvar-imagem', {'link_imagem': linkImagem})
         .done((resp) => {
             console.log(resp)

@@ -35,12 +35,17 @@ def busca_texto():
     return phrase.splitlines()
 
 def salvar_imagem(caminho_da_imagem):
-    response = req.get(caminho_da_imagem, stream=True)
-    if response.status_code == 200:
-        path = "./imagens/image.jpg"
-        with open(path, 'wb') as f:
-            response.raw.decode_content = True
-            shutil.copyfileobj(response.raw, f)
+    print('Error tracking: ---> ', caminho_da_imagem)
+    try:
+        response = req.get(caminho_da_imagem, stream=True)
+        if response.status_code == 200:
+            path = "./imagens/image.jpg"
+            with open(path, 'wb') as f:
+                response.raw.decode_content = True
+                shutil.copyfileobj(response.raw, f)
+    except Exception as e:
+        print(e)
+
 
 def busca_texto_em_imagem(caminho_da_imagem):
     salvar_imagem(caminho_da_imagem)
