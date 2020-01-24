@@ -7,7 +7,8 @@ class Pessoa(db.Model):
     nome = db.Column(db.String(), unique=True, nullable=False)
     presente = db.Column(db.Boolean, nullable=False, default=False)
 
-    def cria(self, dados):
+    @staticmethod
+    def cria(dados):
         try:
             return Pessoa(nome=dados['nome'])
         except Exception as e:
