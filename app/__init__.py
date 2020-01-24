@@ -2,9 +2,8 @@ from flask import Flask, render_template, jsonify, request, abort, redirect, url
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 
-from app.services.imagem_manage import busca_texto_em_imagem
-
 from app.settings import db
+from app.services.imagem_manage import busca_texto_em_imagem
 
 def create_app():
 
