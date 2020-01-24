@@ -8,7 +8,7 @@ from PIL import Image
 ocr.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
 def busca_texto():
-    imagem = Image.open('./image.jpg').convert('RGB')
+    imagem = Image.open('.image.jpg').convert('RGB')
 
     npimagem = np.asarray(imagem).astype(np.uint8)
 
@@ -37,9 +37,9 @@ def busca_texto():
 def salvar_imagem(caminho_da_imagem):
     print('Error tracking: ---> ', caminho_da_imagem)
     try:
-        response = req.get(caminho_da_imagem, stream=True)
+        response = req.get(caminho_da_imagem)
         if response.status_code == 200:
-            path = "./image.jpg"
+            path = ".image.jpg"
             with open(path, 'wb') as f:
                 response.raw.decode_content = True
                 shutil.copyfileobj(response.raw, f)
