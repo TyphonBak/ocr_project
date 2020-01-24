@@ -16,7 +16,7 @@ def create_app():
 
     db.init_app(app)
 
-    from app.services.pessoa_manage import listar as listar_pessoa, mostrar_presentes, marca_presenca
+    from app.services.pessoa_manage import listar as listar_pessoa, mostrar_presentes, marca_presenca, reseta_presentes
     # Paginas
 
     @app.route('/')
@@ -55,7 +55,8 @@ def create_app():
 
     @app.route('/reseta/<segredo>')
     def reseta_presencas(segredo):
-        if segredo == 'todos':        
+        if segredo == 'todos':
+            reseta_presentes()
             return redirect(url_for('index'))
         abort(404)
 

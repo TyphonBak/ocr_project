@@ -66,3 +66,9 @@ def listar():
     except Exception as e:
         print('Erro ao listar Pessoa: ', e)
         return None
+
+def reseta_presentes():
+    try:
+        Pessoa.query.filter_by(presente=True).update(presente=False)
+    except Exception as e:
+        print('Erro ao resetar presentes! ', e)
