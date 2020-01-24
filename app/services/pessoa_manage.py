@@ -69,6 +69,8 @@ def listar():
 
 def reseta_presentes():
     try:
-        Pessoa.query.filter_by(presente=True).update(presente=False)
+        for pessoa in Pessoa.query.filter_by(presente=True):
+            pessoa.presente=False
+        db.session.commit()
     except Exception as e:
         print('Erro ao resetar presentes! ', e)
