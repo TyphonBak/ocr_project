@@ -29,7 +29,7 @@ def busca_texto():
     binimagem = Image.fromarray(thresh) 
 
     # chamada ao tesseract OCR por meio de seu wrapper
-    phrase = ocr.image_to_string(binimagem, lang='por')
+    phrase = ocr.image_to_string(binimagem, lang='eng')
 
     # impressão do resultado
     return phrase.splitlines()
